@@ -1,0 +1,127 @@
+<div id="narrative-ui-scene-config" class="tab" data-tab="narrative-ui">
+    <div>
+
+        <div class="form-group">
+            <label>Layout por defecto</label>
+            <select name="flags.narrative-ui.defaultLayout" data-dtype="String">
+                {{#select sceneSettings.defaultLayout}}
+                <option value=""></option>
+                {{#each sceneSettings.layouts}}
+                <option value="{{@key}}">{{this.name}}</option>
+                {{/each}}
+                {{/select}}
+            </select>
+            <p class="notes">Layout a mostrar cuando se cargue la escena</p>
+        </div>
+
+        <hr>
+
+        <div class="layouts-settings">
+            {{#each sceneSettings.layouts}}
+            <div class="layouts-settings-item">
+                <div class="layouts-settings-accordion">
+                    <button type="button"
+                        class="layouts-settings-accordion__name {{#unless this.active}}layouts-settings-accordion__name--inactive{{/unless}}"
+                        data-action="display-layout-settings"><i
+                            class="fas {{this.icon}}"></i><span>{{this.name}}</span></button>
+                </div>
+                <div class="layouts-settings-form">
+                    <div class="form-group">
+                        <label>Activo</label>
+                        <input class="layouts-settings-form__active" type="checkbox" data-dtype="Boolean"
+                            name="flags.narrative-ui.layouts.{{@key}}.active" {{checked this.active}} />
+                    </div>
+                    <div class="form-group">
+                        <label>Nombre</label>
+                        <input class="layouts-settings-form__name" type="text" data-dtype="String"
+                            name="flags.narrative-ui.layouts.{{@key}}.name" value="{{this.name}}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Icono</label>
+                        <input class="layouts-settings-form__icon" type="text" data-dtype="String"
+                            name="flags.narrative-ui.layouts.{{@key}}.icon" value="{{this.icon}}" />
+                        <p class="notes">Puedes encontrar los iconos disponibles aqui: https://fontawesome.com/search
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <label>Imagen de fondo</label>
+                        {{filePicker target=(concat3 'flags.narrative-ui.layouts.' @key '.backgroundImage')
+                        type="image"}}
+                        <input class="layouts-settings-form__background" type="text"
+                            name="flags.narrative-ui.layouts.{{@key}}.backgroundImage"
+                            value="{{this.backgroundImage}}" />
+                    </div>
+                    <div class="form-group">
+                        <label>HTML de fondo</label>
+                        <button type="button" data-type="html"
+                            data-target="flags.narrative-ui.layouts.{{@key}}.customBackground"
+                            class="layouts-settings-form__customBackground-picker">
+                            <i class="fas fa-file-import fa-fw"></i>
+                        </button>
+                        <input class="layouts-settings-form__customBackground" type="text"
+                            name="flags.narrative-ui.layouts.{{@key}}.customBackground"
+                            value="{{this.customBackground}}" />
+                    </div>
+                    <div class="form-group">
+                        <label>Estilos personalizados</label>
+                        <button type="button" data-type="html"
+                            data-target="flags.narrative-ui.layouts.{{@key}}.customStyles"
+                            class="layouts-settings-form__customStyles-picker">
+                            <i class="fas fa-file-import fa-fw"></i>
+                        </button>
+                        <input class="layouts-settings-form__customStyles" type="text"
+                            name="flags.narrative-ui.layouts.{{@key}}.customStyles" value="{{this.customStyles}}" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Ocultar Canvas</label>
+                        <input type="checkbox" name="flags.narrative-ui.layouts.{{@key}}.canvasHide"
+                            data-dtype="Boolean" {{checked this.canvasHide}} />
+                        <p class="notes">Ocultar el canvas para esta escena</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Canvas width</label>
+                        <input type="number" name="flags.narrative-ui.layouts.{{@key}}.canvasWidth" data-dtype="Number"
+                            value="{{this.canvasWidth}}" />
+                        <p class="notes">Anchura del canvas para esta escena</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Canvas height</label>
+                        <input type="number" name="flags.narrative-ui.layouts.{{@key}}.canvasHeight" data-dtype="Number"
+                            value="{{this.canvasHeight}}" />
+                        <p class="notes">Altura del canvas para esta escena</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Canvas inset</label>
+                        <input type="text" name="flags.narrative-ui.layouts.{{@key}}.canvasInset" data-dtype="String"
+                            value="{{this.canvasInset}}" />
+                        <p class="notes">Margen del canvas para esta escena</p>
+                    </div>
+
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <!-- <div class="form-group">
+            <label>Diseño</label>
+            <select name="{{ sceneFlags }}.layout" data-dtype="String">
+                {{#select sceneConfig.layout}}
+                    <option value="default">Default</option>
+                    <option value="all-right">Alineado a la derecha</option>
+                    <option value="even" >Repartido equitativamente</option>
+                {{/select}}
+            </select>
+            <p class="notes">Disposición del diseño</p>
+        </div> -->
+
+        <!-- <div class="form-group">
+            <label>{{localize "FALEMOS.CameraOverlayText"}}</label>
+            <div class="form-fields">
+                {{filePicker target=(concat3 'flags.falemos.config.' this.id '.overlayImg') type="imagevideo"}}
+                <input class="image" type="text" name="flags.falemos.config.{{ this.id }}.overlayImg" placeholder="{{localize 'File Path'}}" value="{{lookupProp ../falemosconfig this.id 'overlayImg'}}"/>
+            </div>
+                <p class="notes">{{localize "FALEMOS.CameraOverlayNotes"}}</p>
+        </div> -->
+    </div>
+</div>

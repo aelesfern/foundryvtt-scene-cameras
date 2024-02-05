@@ -1,0 +1,67 @@
+div#camera-views.app.narrative-ui {
+	--scene-cameras-padding: 5%;
+}
+div#camera-views.app.narrative-ui .camera-grid {
+	display: flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	gap: var(--scene-cameras-padding);
+	padding: var(--scene-cameras-padding);
+	align-content: start;
+	justify-content: center;
+	height: 100vh;
+}
+div#camera-views.app.narrative-ui .camera-container {
+	overflow: unset;
+}
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(1),
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(1) ~ .camera-view-popout {
+	flex: 1 1 100%;
+	max-width: calc(100% / 1 - var(--scene-cameras-padding) / 1);
+	max-height: calc(100% / 1 - var(--scene-cameras-padding) / 1);
+}
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(2),
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(2) ~ .camera-view-popout {
+	flex: 1 1 100%;
+	max-width: calc(100% / 2 - var(--scene-cameras-padding) / 2);
+	max-height: calc(100% / 2 - var(--scene-cameras-padding) / 2);
+}
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(3),
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(3) ~ .camera-view-popout {
+	flex: 1 1 100%;
+	max-width: calc(100% / 2 - var(--scene-cameras-padding) / 2);
+	max-height: calc(100% / 2 - var(--scene-cameras-padding) / 2);
+}
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(3) ~ .camera-view-popout:last-child::before {
+	content: '';
+}
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(4),
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(4) ~ .camera-view-popout {
+	flex: 1 1 100%;
+	max-width: calc(100% / 2 - var(--scene-cameras-padding) / 2);
+	max-height: calc(100% / 2 - var(--scene-cameras-padding) / 2);
+}
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(5),
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(5) ~ .camera-view-popout {
+	flex: 1 1 100%;
+	max-width: calc(100% / 3 - var(--scene-cameras-padding) / 3);
+	max-height: calc(100% / 3 - var(--scene-cameras-padding) / 3);
+}
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(6),
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(6) ~ .camera-view-popout {
+	flex: 1 1 100%;
+	max-width: calc(100% / 3 - var(--scene-cameras-padding) / 3);
+	max-height: calc(100% / 3 - var(--scene-cameras-padding) / 3);
+}
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(7),
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(5) ~ .camera-view-popout {
+	flex: 1 1 100%;
+	max-width: calc(100% / 4 - var(--scene-cameras-padding) / 4);
+	max-height: calc(100% / 4 - var(--scene-cameras-padding) / 4);
+}
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(8),
+div#camera-views.app.narrative-ui .camera-view-popout:first-child:nth-last-child(6) ~ .camera-view-popout {
+	flex: 1 1 100%;
+	max-width: calc(100% / 4 - var(--scene-cameras-padding) / 4);
+	max-height: calc(100% / 4 - var(--scene-cameras-padding) / 4);
+}

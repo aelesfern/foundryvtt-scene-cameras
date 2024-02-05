@@ -1,0 +1,45 @@
+#narrative-ui-scene-config {
+	min-height: 500px;
+
+	.layouts-settings {
+		&-item + &-item {
+			margin-top: 1rem;
+		}
+
+		&-accordion {
+			display: flex;
+			background: rgba(255, 255, 240, 0.8);
+			border: 1px solid var(--color-border-light-primary);
+			border-radius: 3px;
+
+			&__name {
+				border: none;
+				outline: none;
+				background: unset;
+				flex: 1;
+
+				&--inactive {
+					text-decoration: line-through;
+				}
+			}
+		}
+
+		&-form {
+			display: none;
+			overflow: hidden;
+			transition: 0.4s;
+
+			&.active {
+				display: block;
+			}
+
+			&__customStyles-picker,
+			&__customBackground-picker {
+				flex: 0 0 24px;
+				line-height: 24px;
+				margin: -1px 0 -1px 4px;
+				order: 99;
+			}
+		}
+	}
+}

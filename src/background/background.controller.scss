@@ -1,0 +1,13 @@
+#narrative-ui-container {
+	--narrative-ui-container-background-src: url('/modules/narrative-ui/assets/sample-background-1.png');
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: -1;
+	background: var(--narrative-ui-container-background-src) no-repeat center center;
+	background-size: cover;
+	pointer-events: none;
+}

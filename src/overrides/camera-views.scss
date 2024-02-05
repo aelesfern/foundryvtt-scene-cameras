@@ -1,0 +1,22 @@
+div#camera-views.app.narrative-ui {
+	position: fixed;
+	width: 100vw !important;
+	height: 100vh !important;
+
+	.camera-grid {
+		max-height: 100vh;
+	}
+
+	.camera-view-popout {
+		position: relative;
+	}
+	.camera-view {
+		overflow: hidden;
+	}
+	.video-container {
+		height: 100%;
+	}
+	.user-camera {
+		object-fit: cover;
+	}
+}

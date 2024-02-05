@@ -1,0 +1,10 @@
+div#camera-views.app.narrative-ui .camera-grid {
+	display: flex;
+	flex-flow: column;
+	flex-wrap: wrap;
+	align-items: start;
+	padding: 2% 42% 2% 2%;
+}
+div#camera-views.app.narrative-ui .camera-view-popout {
+	aspect-ratio: 0.75;
+}
